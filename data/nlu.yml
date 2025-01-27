@@ -30,6 +30,29 @@ nlu:
     - bye bye
     - see you later
 
+- intent: gratitude
+  examples: |
+    - Thanks
+    - Thank you
+    - Thanks a lot
+    - I appreciate it
+    - Much appreciated
+    - I'm grateful
+    - Thank you so much
+    - Thanks for your help
+    - I'm really thankful
+    - Cheers
+    - Thanks for everything
+    - Many thanks
+    - Greatly appreciated
+    - I owe you one
+    - Thanks a ton
+    - I'm deeply thankful
+    - Appreciate it
+    - Thank you kindly
+    - Thank you for your support
+    - Thanks for your assistance
+
 - intent: affirm
   examples: |
     - yes
@@ -89,3 +112,62 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: order_tracking
+  examples: |
+    - where is my order?
+    - how to track my order?
+    - where has my order reached?
+    - can you tell where is my order?
+    - show my order
+    - open order tracking
+    - how to track shipping?
+    - has my order shipped yet?
+    - what is the location of my order?
+    - order tracker
+    - i want to know my order location
+  
+- intent: name_entry
+  examples: |
+    - My name is [Ashish](name)
+    - [ashish](name:Ashish) this side
+    - It's [ashish](name:Ashish)
+    - [ashish](name:Ashish) is my name
+    - [Ashish](name)
+    - [Rahul](name)
+    - [ashish](name:Ashish)
+    - My name is [Harsh](name)
+    - [harsh](name:Harsh) this side
+    - It's [harsh](name:Harsh)
+    - [harsh](name:Harsh) is my name
+    - [Harsh](name)
+    - [Rahul](name)
+    - [harsh](name:Harsh)
+    - It is [Tom](name)
+    - My name is [Bob](name)
+    - my name is [Harsh](name)
+    - name is [Rajesh](name)
+    - my name is [demo](name)
+    - name is [demo](name)
+    - I am [Harsh](name)
+    - I am [Nandan](name)
+    - I am [demo](name)
+    - myself [Harsh](name)
+    - myself [demo](name)
+
+- intent: order_id_entry
+  examples: |
+    - my order id is [32j32m](order_id)
+    - It's [556ev16](order_id:556ev16)
+    - [556ev16](order_id:556ev16) is my order id
+    - my id is [51dcd515](order_id:51dcd515)
+    - [51dcd515](order_id)
+    - [262dcdc6](order_id)
+    - [556ev16](order_id:556ev16)
+    - My id is [9058325045](order_id)
+    - [556ev16](order_id)
+    - It's [dvs655v](order_id:556ev16)
+    - [vfsvs25r]](order_id:556ev16) is my order_id
+    - [in_orde789](order_id)
+    - [up_8552dc](order_id)
+    - my order_id is [842122](order_id)

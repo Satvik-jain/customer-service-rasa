@@ -2,6 +2,12 @@ version: "3.1"
 
 rules:
 
+- rule: Say `hello` when the user starts a conversation with intent `greet`
+  conversation_start: true
+  steps:
+  - intent: greet
+  - action: utter_greet
+
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
@@ -11,3 +17,4 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+

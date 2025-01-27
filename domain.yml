@@ -4,18 +4,66 @@ intents:
   - greet
   - goodbye
   - affirm
+  - order_tracking
+  - name_entry
+  - order_id_entry
   - deny
+  - gratitude
   - mood_great
   - mood_unhappy
   - bot_challenge
 
+entities:
+  - name
+  - products
+  - order_id
+
+slots:
+  order_id:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: order_id
+  
+  products:
+    type: list
+    mappings:
+    - type: from_entity
+      entity: products
+
+  name:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: name
+
 responses:
+
+  utter_ask_order:
+  - text: "Tell us your order id"
+  - text: "Please share your order id"
+
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Hey, How are you?"
+    buttons:
+    - title: "great"
+      payload: "/mood_great"
+    - title: "unhappy"
+      payload: "/mood_unhappy"
+  - text: "Hey, How is your day going?"
+    buttons:
+    - title: "great"
+      payload: "/mood_great"
+    - title: "unhappy"
+      payload: "/mood_unhappy"
+    
+
+  # utter_ask_name:
+  # - text: "Please enter your name!"
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+    image: "https://shorturl.at/CwwlS"
 
   utter_did_that_help:
   - text: "Did that help you?"
@@ -23,11 +71,21 @@ responses:
   utter_happy:
   - text: "Great, carry on!"
 
+  utter_welcome:
+  - text: "Happy to assist!"
+
   utter_goodbye:
   - text: "Bye"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: "I am a bot, made by Tarini Consultancy."
+
+  utter_ask_if_help:
+  - text: "Are you looking for product recommendation or help regarding your order?"
+
+
+actions:
+  - action_get_order_details
 
 session_config:
   session_expiration_time: 60

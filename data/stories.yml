@@ -8,6 +8,7 @@ stories:
   - action: utter_greet
   - intent: mood_great
   - action: utter_happy
+  - action: utter_ask_if_help
 
 - story: sad path 1
   steps:
@@ -27,4 +28,47 @@ stories:
   - action: utter_cheer_up
   - action: utter_did_that_help
   - intent: deny
-  - action: utter_goodbye
+  - action: utter_ask_if_help
+
+- story: need order related help
+  steps:
+  - intent: order_tracking
+  - action: utter_ask_order
+  - intent: order_id_entry
+  - action: action_get_order_details
+  - intent: affirm
+  - action: utter_happy
+
+- story: need order related help 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: order_tracking
+    entities:
+    - order_id
+  - action: action_get_order_details
+  - intent: affirm
+  - action: utter_happy
+
+- story: need order related help 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: order_tracking
+    entities:
+    - order_id
+  - action: action_get_order_details
+  - intent: gratitude
+  - action: utter_happy
+
+- story: need order related help 4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: order_tracking
+  - action: utter_ask_order
+  - intent: order_id_entry
+  - action: action_get_order_details
+  - intent: affirm
+  - action: utter_happy
+
